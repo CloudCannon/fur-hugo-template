@@ -1,0 +1,19 @@
+<nav>
+	<a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
+	{{ if .Site.Menus.main }}
+		{{ $currentPage := . }}
+		{{ range .Site.Menus.main }}
+			{{ $class := "" }}
+			{{ if and .Params.highlight }}
+				{{ $class = print $class " highlight" }}
+			{{ end }}
+
+			{{ if ($currentPage.IsMenuCurrent "main" .) | and (not .Params.new_window) }}
+				{{ $class = print $class " active" }}
+			{{ end }}
+
+			<a href="{{ .URL | relURL }}" title="{{ .Name }} page" class="{{ $class }}" {{ if .Params.new_window }}target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
+		{{ end }}
+	{{ end }}
+	<a href="#" class="cart snipcart-checkout"><i class="material-icons">shopping_cart</i></a>
+</nav>

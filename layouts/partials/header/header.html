@@ -1,0 +1,22 @@
+<header>
+	<div class="container">
+		<div class="company-name">
+			<a href="{{ .Site.BaseURL }}/">{{ readFile "static/logo.svg" | safeHTML }} <span>{{ .Site.Title }}</span></a>
+		</div>
+		{{ partial "header/nav" . }}
+	</div>
+
+	<section class="hero">
+		<div class="text-container">
+			{{ if .Params.hero }}
+				<h2>{{ .Params.hero }}</h2>
+			{{ else if .Params.name }}
+				<h2>{{ .Params.name }}</h2>
+			{{ end }}
+
+			{{ if .Params.subtitle }}
+				<p>{{ .Params.subtitle }}</p>
+			{{ end }}
+		</div>
+	</section>
+</header>

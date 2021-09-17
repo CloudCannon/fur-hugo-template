@@ -1,0 +1,46 @@
+<footer>
+	<div class="container">
+		<ul class="footer-columns">
+			<li class="about">
+				<div class="company-name">{{ readFile "static/logo.svg" | safeHTML }} <span>{{ .Site.Title }}</span></div>
+				<p class="editable">Many people have the notion that enlightenment is one state. Many also believe that when it is attained, a person is forever in that state.</p>
+			</li>
+
+			<li class="footer-nav">
+				<h4>General</h4>
+				<!-- Use hugo menu range -->
+				<ul>
+					<li><a href="/">Products</a></li>
+					<li><a href="/about/">Our Story</a></li>
+					<li><a href="/contact/">Contact</a></li>
+				</ul>
+			</li>
+
+			<li class="footer-nav">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/shipping/">Shipping</a></li>
+					<li><a href="/returns/">Returns</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<h4>Contact Us</h4>
+				<p>Need help with something? <a href="/contact/">Get in touch</a>.
+				<p class="email"><a href="mailto:{{ .Site.Params.author.email }}">{{ .Site.Params.author.email }}</a></p>
+				<p><a href="tel:{{ .Site.Params.author.phone }}">{{ .Site.Params.author.phone }}</a></p>
+
+				<div class="social-icons">
+					{{ range .Site.Data.socials }}
+						<a {{ if .new_window }}target="_blank" rel="noopener"{{ end }} href="{{ .link | relURL }}" {{ with lower .social_icon }}class="{{ . }}"{{ end }}>
+							{{ with .social_icon }}
+								{{ partial "footer/social-icon" . }}
+							{{ end }}
+						</a>
+					{{ end }}
+				</div>
+			</li>
+		</ul>
+		<p class="copyright">All Rights Reserved &copy; {{ now.Format "2006" }} {{ .Site.Title }}, Inc. Template by <a href="https://cloudcannon.com/">CloudCannon</a></p>
+	</div>
+</footer>

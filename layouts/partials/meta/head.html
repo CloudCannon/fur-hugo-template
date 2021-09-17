@@ -1,0 +1,39 @@
+<head lang="en">
+	<meta charset="utf-8">
+	<title>{{ print .Page.Title " | " .Site.Title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+
+	{{ hugo.Generator }}
+
+    {{ with resources.Get "sass/screen.scss" }}
+        {{ $style := . | resources.ToCSS }}
+        <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" type="text/css">
+	{{ end }}
+
+	{{ with "favicon.png" }}
+        <link rel="icon" href="{{ . }}" type="image/png"/>
+    {{ end }}
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	{{ with .Site.Params.snipcart_key }}
+		<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="{{ . }}"></script>
+	{{ end }}
+
+
+	{{ range .AlternativeOutputFormats -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
+	{{- template "_internal/opengraph.html" . -}}
+	{{- template "_internal/schema.html" . -}}
+	{{- template "_internal/twitter_cards.html" . -}}
+
+	{{ if hugo.IsProduction }}
+		{{ template "_internal/google_analytics_async.html" . }}
+	{{ end }}
+</head>

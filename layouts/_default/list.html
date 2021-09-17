@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="content">
+	<section class="page">
+		<div class="container {{ if .Params.full_width }}max-container{{ end }}">
+			{{ .Content }}
+		</div>
+	</section>
+</div>
+{{ end }}

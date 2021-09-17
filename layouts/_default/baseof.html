@@ -1,0 +1,20 @@
+<!doctype html>
+
+<html lang="en">
+	{{ partial "meta/head" . }}
+	<body>
+		{{ partial "header/header" . }}
+
+		{{ block "main" . }}{{ end }}
+
+		{{ partial "footer/footer" . }}
+
+		<script>
+			document.getElementById("open-nav").onclick = function () {
+				document.body.classList.toggle("nav-open");
+				return false;
+			};
+		</script>
+		{{ with "/js/application.js" }}<script src="{{ . }}" type="text/javascript"></script> {{ end }}
+	</body>
+</html>

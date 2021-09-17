@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="content" id="products">
+	<section>
+		<div class="container">
+			<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_products" class="btn"><strong>&#9998;</strong> Manage products</a></p>
+			<ul class="product-list">
+				{{ range where .Site.Pages "Section" "products" }}
+					{{ if .Params.name }}
+						<li>
+							{{ partial "product-styles" . }}
+							<div class="product-details">
+								<h4><a href="{{ .Permalink | relURL }}">{{ .Params.name }}</a></h4>
+								<div class="product-description">
+									{{ .Params.description_markdown | markdownify | truncate 45}}
+								</div>
+								<p>${{ .Params.price }}</p>
+							</div>
+						</li>
+					{{ end }}
+				{{ end }}
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</section>
+</div>
+
+{{ end }}

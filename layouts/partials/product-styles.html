@@ -1,0 +1,16 @@
+<div class="styles">
+	{{ $permalink := .Permalink | relURL }}
+	{{ range $index, $style := .Params.styles }}
+		<div class="style" data-item-id="{{ $index }}" {{ if ne $index 0 }} style="display: none" {{end}}>
+			<a href="{{ $permalink }}">
+				<img src="{{ .Site.BaseURL }}{{ $style.image }}">
+			</a>
+		</div>
+	{{ end }}
+
+	<div class="style-picker">
+		{{ range $index, $style := .Params.styles }}
+			<div style="background-color: {{ $style.color }}" data-item-id="{{ $index }}"></div>
+		{{ end }}
+	</div>
+</div>
