@@ -14,6 +14,4 @@ map:
 menu:
   main:
     weight: 112
-  footer:
-    weight: 112
 ---

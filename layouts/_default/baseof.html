@@ -5,7 +5,13 @@
 	<body>
 		{{ partial "header/header" . }}
 
-		{{ block "main" . }}{{ end }}
+		<div class="content" {{ if .IsHome }} id="products" {{ end }}>
+			<section class="page">
+				<div class="container {{ if .Params.full_width }}max-container{{ end }}">
+					{{ block "main" . }}{{ end }}
+				</div>
+			</section>
+		</div>
 
 		{{ partial "footer/footer" . }}
 

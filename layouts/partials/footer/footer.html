@@ -10,17 +10,21 @@
 				<h4>General</h4>
 				<!-- Use hugo menu range -->
 				<ul>
-					<li><a href="/">Products</a></li>
-					<li><a href="/about/">Our Story</a></li>
-					<li><a href="/contact/">Contact</a></li>
+					{{ range .Site.Menus.main }}
+						<li><a {{ if .Params.new_window }}target="_blank" rel="noopener"{{ end }} href="{{ .URL | relURL }}">
+							{{ .Name }}</a></li>
+					{{ end }}
 				</ul>
 			</li>
 
 			<li class="footer-nav">
 				<h4>Help</h4>
+
 				<ul>
-					<li><a href="/shipping/">Shipping</a></li>
-					<li><a href="/returns/">Returns</a></li>
+					{{ range .Site.Menus.footer }}
+						<li><a {{ if .Params.new_window }}target="_blank" rel="noopener"{{ end }} href="{{ .URL | relURL }}">
+							{{ .Name }}</a></li>
+					{{ end }}
 				</ul>
 			</li>
 

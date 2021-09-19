@@ -6,6 +6,4 @@ type: about
 menu:
   main:
     weight: 111
-  footer:
-    weight: 111
 ---
