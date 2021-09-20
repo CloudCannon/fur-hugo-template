@@ -32,6 +32,8 @@ weight = 110
   new_window = false
   highlight = false
 
+[_select_data]
+garment_type = ["hat", "top"]
 
 [cloudcannon._options.type]
 hidden = true
@@ -47,10 +49,7 @@ color = "The background color used in the plan name and call to action."
 new_window = "Open link in new window"
 description = "This is used for facebook shares of the page and google indexing"
 
-[_select_data]
-garment_type = ["hat", "top"]
 
-[cloudcannon]
 [cloudcannon.collections.staff_members]
 _enabled_editors = ["data"]
 _icon = "account_circle"
