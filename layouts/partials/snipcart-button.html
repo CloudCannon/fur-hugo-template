@@ -1,15 +1,16 @@
 {{ $colors := "" }}
 {{ range .Params.styles }}
-	{{ $colors = print $colors '|' .name }}
+	{{ $colors = print $colors "|" .name }}
 {{ end }}
 {{ $colors = substr $colors 1 }}
+{{ $sizes := (delimit .Params.sizes "|") }}
 <button class="snipcart-add-item"
 	data-item-name="{{ .Params.name }}"
 	data-item-id="{{ .Params.sku }}"
-	data-item-image="{{ with (index .Params.styles 1) }} {{ .image }} {{ end }}"
+	data-item-image="{{ with (index .Params.styles 0) }} {{ .image }} {{ end }}"
 	data-item-description="{{ .Params.description }}"
 	data-item-custom1-name="Size"
-	data-item-custom1-options="{{ $colors }}"
+	data-item-custom1-options="{{ $sizes }}"
 	data-item-custom1-value="Medium"
 	data-item-custom2-name="Color"
 	data-item-custom2-options="{{ $colors }}"
