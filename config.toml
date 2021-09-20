@@ -21,17 +21,6 @@ links = [
 	"https://github.com/CloudCannon/fur-hugo-template"
 ]
 
-
-[menu]
-[[menu.main]]
-identifier = "products"
-name = "Products"
-url = "/"
-weight = 110
-[menu.main.params]
-  new_window = false
-  highlight = false
-
 [_select_data]
 garment_type = ["hat", "top"]
 
