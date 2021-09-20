@@ -8,6 +8,7 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
 snipcart_key = "NWNjOWZhYjctYmE1ZS00MDM3LThkNjUtZmE5M2NiMTU1NzAwNjM2MjYzNTE1MzM5ODg1ODkw"
+
 [params.author]
 name = "fur"
 email = "fur@example.com"
@@ -45,3 +46,14 @@ highlight = "Emphasis the text"
 color = "The background color used in the plan name and call to action."
 new_window = "Open link in new window"
 description = "This is used for facebook shares of the page and google indexing"
+
+[_select_data]
+garment_type = ["hat", "top"]
+
+[cloudcannon]
+[cloudcannon.collections.staff_members]
+_enabled_editors = ["data"]
+_icon = "account_circle"
+[cloudcannon.collections.products]
+_enabled_editors = ["data"]
+_icon = "shopping_cart"
