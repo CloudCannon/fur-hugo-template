@@ -8,12 +8,12 @@ menu:
     weight: 1
 ---
 
-Please review the below information to find answers to any of your questions regarding our policies.</p>
+Please review the below information to find answers to any of your questions regarding our policies.
 
 ### Shipping Services
-Fur provides the below shipping services. Actual delivery time frames may vary due to weather, service delays, holidays etc.</p>
+Fur provides the below shipping services. Actual delivery time frames may vary due to weather, service delays, holidays etc.
 
-Free Standard shipping is available for apparel only on orders that have an after-discount subtotal value of $1.00 or more. Domestic shipping to Hawaii, Alaska, or Puerto Rico or any other location outside the Continental United States may take longer than expected due to their locations.</p>
+Free Standard shipping is available for apparel only on orders that have an after-discount subtotal value of $1.00 or more. Domestic shipping to Hawaii, Alaska, or Puerto Rico or any other location outside the Continental United States may take longer than expected due to their locations.
 
 ### Standard Shipping (6-10 business days)
 
