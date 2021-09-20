@@ -8,10 +8,10 @@
 
 			<li class="footer-nav">
 				<h4>General</h4>
-				<!-- Use hugo menu range -->
 				<ul>
 					{{ range .Site.Menus.main }}
-						<li><a {{ if .Params.new_window }}target="_blank" rel="noopener"{{ end }} href="{{ .URL | relURL }}">
+						{{ $new_window := .Params.new_window }}
+						<li><a {{ if $new_window }}target="_blank" rel="noopener"{{ end }} href="{{ .URL | relURL }}">
 							{{ .Name }}</a></li>
 					{{ end }}
 				</ul>
@@ -22,7 +22,8 @@
 
 				<ul>
 					{{ range .Site.Menus.footer }}
-						<li><a {{ if .Params.new_window }}target="_blank" rel="noopener"{{ end }} href="{{ .URL | relURL }}">
+						{{ $new_window := .Params.new_window }}
+						<li><a {{ if $new_window }}target="_blank" rel="noopener"{{ end }} href="{{ .URL | relURL }}">
 							{{ .Name }}</a></li>
 					{{ end }}
 				</ul>
