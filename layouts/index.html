@@ -1,5 +1,5 @@
 {{ define "main" }}
-<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_products" class="btn"><strong>&#9998;</strong> Manage products</a></p>
+<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/content/products" class="btn"><strong>&#9998;</strong> Manage products</a></p>
 <ul class="product-list">
 	{{ range where .Site.Pages "Section" "products" }}
 		{{ if .Params.name }}
