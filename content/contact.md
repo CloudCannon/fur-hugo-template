@@ -14,4 +14,8 @@ map:
 menu:
   main:
     weight: 112
+
+_enabled_editors:
+  - visual
+  - content
 ---

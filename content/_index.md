@@ -7,4 +7,8 @@ menu:
   main:
     weight: 110
     name: "Products"
+
+_enabled_editors:
+  - visual
+  - content
 ---

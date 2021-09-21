@@ -6,4 +6,8 @@ type: about
 menu:
   main:
     weight: 111
+
+_enabled_editors:
+  - visual
+  - content
 ---
