@@ -17,11 +17,18 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-	<link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	{{ with .Site.Params.snipcart_key }}
-		<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="{{ . }}"></script>
+	<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
+	<link rel="preconnect" href="https://app.snipcart.com" />
+	<link rel="preconnect" href="https://cdn.snipcart.com" />
+	{{ if .Site.Params.snipcart_key }}
+		<script async src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+		<div hidden id="snipcart"
+			data-api-key="{{ .Site.Params.snipcart_key }}"
+			data-currency="{{ .Site.Params.snipcart_currency }}"
+			data-config-modal-style="side">
+		</div>
 	{{ end }}
 
 

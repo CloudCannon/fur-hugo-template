@@ -8,6 +8,7 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
 snipcart_key = "NWNjOWZhYjctYmE1ZS00MDM3LThkNjUtZmE5M2NiMTU1NzAwNjM2MjYzNTE1MzM5ODg1ODkw"
+snipcart_currency = "usd"
 
 [params.author]
 name = "fur"
